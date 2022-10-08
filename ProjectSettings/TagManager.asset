@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - EnemyAttack
+  - Heal Area
+  - PlayerAttack
+  - Win
+  - KillZone
+  - music
+  - CheckSys
+  - Checkpoint
+  - timer
+  - strtTime
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Enemies
+  - Level
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2798373685
+    locked: 0
+  - name: Level Objects
+    uniqueID: 380014175
+    locked: 0
+  - name: Enemies
+    uniqueID: 3365923103
+    locked: 0
+  - name: Player
+    uniqueID: 1656632393
+    locked: 0
