@@ -41,6 +41,10 @@ public class CharacterController2DMK : MonoBehaviour
 	private bool m_wasCrouching = false;
 	//END Brackey's Declarations
 
+	public UnityEvent onBeginMovingLeft;
+	public UnityEvent onBeginMovingRight;
+	public UnityEvent onJump;
+
 	//Mickey Declarations
 	
 	//health declarations
@@ -176,12 +180,14 @@ public class CharacterController2DMK : MonoBehaviour
 				{
 					// ... flip the player.
 					Flip();
+					onBeginMovingRight?.Invoke();
 				}
 				// Otherwise if the input is moving the player left and the player is facing right...
 				else if (move < 0 && m_FacingRight)
 				{
 					// ... flip the player.
 					Flip();
+					onBeginMovingRight?.Invoke();
 				}
 			}
 			// If the player should jump...
@@ -189,6 +195,7 @@ public class CharacterController2DMK : MonoBehaviour
 			{
 				// Add a vertical force to the player.
 				m_Grounded = false;
+				onJump?.Invoke();
 				m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
 				m_Rigidbody2D.AddRelativeForce(new Vector2(0f, m_JumpForce));
 			}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 //this is a placeholder script, will need to reconcile and make similar to PlayerAttack + EnemyEvents
 
@@ -31,6 +32,8 @@ public class PlayerEvents : MonoBehaviour
     private bool win;
     private float winTime = 5;
     private float counter;
+
+    public UnityEvent onHit;
 
     // Start is called before the first frame update
     void Start()
@@ -91,6 +94,7 @@ public class PlayerEvents : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EnemyAttack") && !invincible)
         {
+            onHit?.Invoke();
             player.hp -= EnemDMG;
             invincible = true;
             invincibilityTimer = invincibilityTimerMax;
