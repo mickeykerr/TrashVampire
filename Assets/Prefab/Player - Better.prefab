@@ -10046,6 +10046,38 @@ PrefabInstance:
       propertyPath: AttackCollider
       value: 
       objectReference: {fileID: 2051749038589247239}
+    - target: {fileID: 7008626761862512146, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008626761862512146, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008626761862512146, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 335611419}
+    - target: {fileID: 7008626761862512146, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008626761862512146, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Shake
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008626761862512146, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScreenShake, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008626761862512146, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008626761862512146, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7008626761862512147, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
       propertyPath: EnemDMG
       value: 5
@@ -10404,7 +10436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7008626761862512155, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player - Better
       objectReference: {fileID: 0}
     - target: {fileID: 7008626762187903228, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
       propertyPath: m_Name

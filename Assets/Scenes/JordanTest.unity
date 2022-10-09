@@ -544,6 +544,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &236888456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 335611419, guid: 94e09319d5d8af74fa745ff322e66a07, type: 3}
+  m_PrefabInstance: {fileID: 2051749039195902157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1457639d68cfd547ba3d3bb988898c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &255441406
 GameObject:
   m_ObjectHideFlags: 0
@@ -11078,6 +11089,38 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 497715784}
+    - target: {fileID: 2051749037772263266, guid: 94e09319d5d8af74fa745ff322e66a07, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051749037772263266, guid: 94e09319d5d8af74fa745ff322e66a07, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051749037772263266, guid: 94e09319d5d8af74fa745ff322e66a07, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 236888456}
+    - target: {fileID: 2051749037772263266, guid: 94e09319d5d8af74fa745ff322e66a07, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051749037772263266, guid: 94e09319d5d8af74fa745ff322e66a07, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Shake
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051749037772263266, guid: 94e09319d5d8af74fa745ff322e66a07, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScreenShake, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051749037772263266, guid: 94e09319d5d8af74fa745ff322e66a07, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051749037772263266, guid: 94e09319d5d8af74fa745ff322e66a07, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2051749037772263267, guid: 94e09319d5d8af74fa745ff322e66a07, type: 3}
       propertyPath: winText
       value: 

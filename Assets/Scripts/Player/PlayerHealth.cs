@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerHealth : MonoBehaviour
     // delete later - placeholder code
     public GameObject AttackCollider;
     public Animator animator;
+
+    public UnityEvent onDeath;
     void iAmDed()
     {
         //stop ability to move
@@ -28,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
         //delete this when colliders stop getting used
         Destroy(AttackCollider);
+        onDeath?.Invoke();
         //he dead as hell
         isDead = true;
         animator.SetBool("isDead", true);
