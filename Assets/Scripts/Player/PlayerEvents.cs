@@ -23,6 +23,7 @@ public class PlayerEvents : MonoBehaviour
 
     public GameObject restartText;
     public GameObject winText;
+    public string nextLevel;
 
     public AudioSource ouchAudio;
 
@@ -30,6 +31,7 @@ public class PlayerEvents : MonoBehaviour
     private bool win;
     private float winTime = 5;
     private float counter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,7 +81,7 @@ public class PlayerEvents : MonoBehaviour
                 Destroy(musObj);
                 GameObject checkObj = GameObject.FindGameObjectWithTag("CheckSys");
                 Destroy(checkObj);
-                SceneManager.LoadScene("StartMenu");
+                SceneManager.LoadScene(nextLevel);
             }
         }
     }
