@@ -120,7 +120,7 @@ public class PlayerEvents : MonoBehaviour
 
         if (collision.gameObject.CompareTag("goFast"))
         {
-            playerSpeed += boost * Time.deltaTime;
+            playerSpeed *= boost * Time.deltaTime;
         }
         
     }
