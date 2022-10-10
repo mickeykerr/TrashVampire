@@ -213,4 +213,6 @@ public class CharacterController2DMK : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+    
 }

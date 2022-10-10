@@ -34,11 +34,15 @@ public class PlayerEvents : MonoBehaviour
     private float counter;
 
     public UnityEvent onHit;
+    public Rigidbody2D playerRigidbody;
+    private float playerSpeed;
+    public float boost;
 
     // Start is called before the first frame update
     void Start()
     {
         cs = GameObject.FindGameObjectWithTag("CheckSys").GetComponent<CheckpointSys>();
+        playerSpeed = GetComponent<PlayerMovement>().nyoom;
 
         invincible = false;
         invincibilityTimer = 0;
@@ -113,5 +117,11 @@ public class PlayerEvents : MonoBehaviour
             winText.SetActive(true);
             win = true;
         }
+
+        if (collision.gameObject.CompareTag("goFast"))
+        {
+            playerSpeed += boost * Time.deltaTime;
+        }
+        
     }
 }
