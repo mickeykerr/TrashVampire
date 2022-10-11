@@ -100,6 +100,7 @@ public class PlayerEvents : MonoBehaviour
         {
             onHit?.Invoke();
             player.hp -= EnemDMG;
+            StartCoroutine(flashColor(Color.red, 0.25f));
             invincible = true;
             invincibilityTimer = invincibilityTimerMax;
             ouchAudio.Play();
@@ -108,7 +109,6 @@ public class PlayerEvents : MonoBehaviour
         if (collision.gameObject.CompareTag("KillZone"))
         {
             player.hp = 0;
-            
             ouchAudio.Play();
         }
 
@@ -123,5 +123,17 @@ public class PlayerEvents : MonoBehaviour
             playerSpeed *= boost * Time.deltaTime;
         }
         
+    }
+
+
+    public IEnumerator flashColor(Color whatColor, float durationInSeconds)
+    {
+        if (TryGetComponent(out SpriteRenderer render))
+        {
+            Color original = render.color;
+            render.color = whatColor;
+            yield return new WaitForSeconds(durationInSeconds);
+            render.color = original;
+        }
     }
 }

@@ -45,7 +45,15 @@ public class PlayerAttack : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             // this line is fine, enemy attacks have not been coded yet.
-            if(enemy.GetComponent<EnemyEvents>().isDead == false) {health.healTo(health.maxhp);}
+            if(enemy.GetComponent<EnemyEvents>().isDead == false)
+            {
+                health.healTo(health.maxhp);
+            }
+
+            if (TryGetComponent(out PlayerEvents eventManager))
+            {
+                eventManager.flashColor(Color.green, 0.25f);
+            }
             enemy.GetComponent<EnemyEvents>().killMe();
             
         }

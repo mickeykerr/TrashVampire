@@ -9,8 +9,9 @@ public class PlayerHealth : MonoBehaviour
     //health declarations
     public float maxhp = 10;
     public float hp;
+    public float healingFlashSpeed = 5;
     public HealthBar healthBar;
-    private bool inHealthArea;
+    private bool inHealthArea = false;
     //death declations
     public bool movementStatus = true;
     public bool isDead = false;
@@ -19,6 +20,9 @@ public class PlayerHealth : MonoBehaviour
     public Animator animator;
 
     public UnityEvent onDeath;
+
+    private float t = 0f;
+    private bool returnHealing = false;
     void iAmDed()
     {
         //stop ability to move
@@ -39,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void healTo(float healAmt)
     {
-        
+
         hp = healAmt;
     }
 
@@ -58,13 +62,13 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+
+        t = Mathf.Lerp(t, returnHealing ? 0f : 1f, healingFlashSpeed * Time.deltaTime);
+
         // hp loss / time
         if (hp < 0 && isDead == false)
         {
             iAmDed();
-
-        
-            
         }
         if (hp > -1 && !inHealthArea)
         {
@@ -73,10 +77,11 @@ public class PlayerHealth : MonoBehaviour
 
         if (hp > -1 && inHealthArea && hp < 10)
         {
+
             hp += Time.deltaTime * 10;
         }
 
-
+        flashOnHealthPad();
 
         //healthbar should reflect HP
         healthBar.health = hp;
@@ -84,18 +89,42 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Heal Area"))
+        if (collision.gameObject.CompareTag("Heal Area"))
         {
-     
             inHealthArea = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Heal Area"))
+        if (collision.gameObject.CompareTag("Heal Area"))
         {
-            inHealthArea = false; 
+            inHealthArea = false;
+            if (TryGetComponent(out SpriteRenderer renderer)) renderer.color = Color.white;
+        }
+    }
+
+    private void flashOnHealthPad()
+    {
+        if (inHealthArea && TryGetComponent(out SpriteRenderer render))
+        {
+
+            if (returnHealing)
+            {
+                render.color = Color.Lerp(render.color, Color.white, healingFlashSpeed * Time.deltaTime);
+                if (t < 0.05)
+                {
+                    returnHealing = false;
+                    Debug.Log("Swapping to green.");
+                }
+                Debug.Log("Lerping to white. T: " + t);
+            }
+            else
+            {
+                render.color = Color.Lerp(render.color, Color.green, healingFlashSpeed * Time.deltaTime);
+                if (t > 0.75) returnHealing = true;
+                Debug.Log("Lerping to green.");
+            }
         }
     }
 }
