@@ -97,6 +97,7 @@ public class ShootingEnemyEvents : MonoBehaviour
 
         }
     }
+
     // kill enemy
     public void killMe()
     {

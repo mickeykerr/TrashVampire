@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public Transform attackPoint;
-    public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
-
     public PlayerHealth health;
 
     public AudioSource hitAudio;
@@ -15,53 +11,63 @@ public class PlayerAttack : MonoBehaviour
 
     public Animator attackAnimationHandler;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private List<EnemyEvents> _hitEnemies = new List<EnemyEvents>();
+    private bool _attacking = false;
 
     // Update is called once per frame
     void Update()
     {
-//        if (attackAnimationHandler.GetBool("Attack"))
-//        {
-//            attackAnimationHandler.SetBool("Attack", false);
-//        }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (!_attacking && Input.GetKeyDown(KeyCode.Mouse0))
         {
+            Debug.Log("Attacking");
             attackAnimationHandler.SetTrigger("Attack");
-            Attack();
+            StartCoroutine(Attack(attackAnimationHandler));
         }
-        
-    }
-    
-    void Attack()
-    {
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-        if(hitEnemies.Length > 0) { hitAudio.Play(); }
-        if(hitEnemies.Length == 0) { missAudio.Play(); }
-        foreach (Collider2D enemy in hitEnemies)
+        _attacking = attackAnimationHandler.GetCurrentAnimatorStateInfo(0).IsName("Attack");
+    }
+
+    private IEnumerator Attack(Animator animation)
+    {
+        if (_hitEnemies.Count > 0) { hitAudio.Play(); }
+        if (_hitEnemies.Count == 0) { missAudio.Play(); }
+
+        do
         {
-            // this line is fine, enemy attacks have not been coded yet.
-            if(enemy.GetComponent<EnemyEvents>().isDead == false)
+            foreach (EnemyEvents enemy in _hitEnemies)
             {
-                health.healTo(health.maxhp);
+                // this line is fine, enemy attacks have not been coded yet.
+                if (enemy.isDead == false)
+                {
+                    health.healTo(health.maxhp);
+
+                    if (TryGetComponent(out PlayerEvents eventManager))
+                    {
+                        eventManager.flashColor(Color.green, 0.25f);
+                    }
+                    enemy.killMe();
+                }
             }
 
-            if (TryGetComponent(out PlayerEvents eventManager))
-            {
-                eventManager.flashColor(Color.green, 0.25f);
-            }
-            enemy.GetComponent<EnemyEvents>().killMe();
-            
+            yield return new WaitForEndOfFrame();
+
+        } while (animation.GetCurrentAnimatorStateInfo(0).IsName("Attack"));
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out EnemyEvents enemy))
+        {
+            if (_attacking) hitAudio.Play();
+            _hitEnemies.Add(enemy);
         }
     }
-    private void OnDrawGizmosSelected()
-    {
 
-        if(attackPoint == null) { return; }
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out EnemyEvents enemy))
+        {
+            _hitEnemies.Remove(enemy);
+        }
     }
 }

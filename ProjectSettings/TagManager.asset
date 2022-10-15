@@ -16,6 +16,7 @@ TagManager:
   - timer
   - strtTime
   - goFast
+  - Player Attack Entity
   layers:
   - Default
   - TransparentFX

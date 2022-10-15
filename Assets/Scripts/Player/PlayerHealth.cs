@@ -115,15 +115,12 @@ public class PlayerHealth : MonoBehaviour
                 if (t < 0.05)
                 {
                     returnHealing = false;
-                    Debug.Log("Swapping to green.");
                 }
-                Debug.Log("Lerping to white. T: " + t);
             }
             else
             {
                 render.color = Color.Lerp(render.color, Color.green, healingFlashSpeed * Time.deltaTime);
                 if (t > 0.75) returnHealing = true;
-                Debug.Log("Lerping to green.");
             }
         }
     }
