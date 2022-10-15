@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 88071497979795286}
   - component: {fileID: 88071497979795287}
   - component: {fileID: 5818718436767232687}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackZone
   m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
@@ -305,6 +305,15 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+  onBeginMovingLeft:
+    m_PersistentCalls:
+      m_Calls: []
+  onBeginMovingRight:
+    m_PersistentCalls:
+      m_Calls: []
+  onJump:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &8124509355997680484
 Animator:
   serializedVersion: 4
@@ -336,7 +345,7 @@ GameObject:
   - component: {fileID: 2126030328762960159}
   - component: {fileID: 1575502160538833421}
   - component: {fileID: 664385678532737032}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: New Piskel_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
