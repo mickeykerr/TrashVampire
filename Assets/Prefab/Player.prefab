@@ -232,6 +232,15 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+  onBeginMovingLeft:
+    m_PersistentCalls:
+      m_Calls: []
+  onBeginMovingRight:
+    m_PersistentCalls:
+      m_Calls: []
+  onJump:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7008626761862512145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +276,13 @@ MonoBehaviour:
   player: {fileID: 7008626761862512146}
   restartText: {fileID: 0}
   winText: {fileID: 0}
+  nextLevel: 
   ouchAudio: {fileID: 0}
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
+  playerRigidbody: {fileID: 0}
+  boost: 0
 --- !u!114 &7008626761862512146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,11 +297,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhp: 10
   hp: 0
+  healingFlashSpeed: 5
   healthBar: {fileID: 0}
   movementStatus: 1
   isDead: 0
   AttackCollider: {fileID: 7008626762698083959}
   animator: {fileID: 0}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &467248247731413963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,11 +318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542d2864649b8ef46bf8824568978bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPoint: {fileID: 7008626762698083958}
-  attackRange: 0.44
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 128
   health: {fileID: 7008626761862512146}
   hitAudio: {fileID: 0}
   missAudio: {fileID: 0}
@@ -778,6 +792,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7008626762698083958}
+  - component: {fileID: 7416485661998570988}
+  - component: {fileID: 8552478459197462910}
   m_Layer: 6
   m_Name: AttackCollider
   m_TagString: Untagged
@@ -801,6 +817,38 @@ Transform:
   m_Father: {fileID: 7008626761862512149}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &7416485661998570988
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7008626762698083959}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.25, y: 0}
+  m_Size: {x: 1, y: 0.75}
+  m_Direction: 0
+--- !u!114 &8552478459197462910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7008626762698083959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542d2864649b8ef46bf8824568978bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 7008626761862512146}
+  hitAudio: {fileID: 5928382094165140150}
+  missAudio: {fileID: 5928382094165140150}
+  attackAnimationHandler: {fileID: 4262424449298477320}
 --- !u!1 &7008626762721318525
 GameObject:
   m_ObjectHideFlags: 0
