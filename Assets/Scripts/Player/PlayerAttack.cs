@@ -22,6 +22,8 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("Attacking");
             attackAnimationHandler.SetTrigger("Attack");
             StartCoroutine(Attack(attackAnimationHandler));
+            //if (_hitEnemies.Count > 0) {  }
+            if (_hitEnemies.Count == 0) { missAudio.Play(); }
         }
 
         _attacking = attackAnimationHandler.GetCurrentAnimatorStateInfo(0).IsName("Attack");
@@ -29,8 +31,7 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator Attack(Animator animation)
     {
-        if (_hitEnemies.Count > 0) { hitAudio.Play(); }
-        if (_hitEnemies.Count == 0) { missAudio.Play(); }
+
 
         do
         {
@@ -45,6 +46,7 @@ public class PlayerAttack : MonoBehaviour
                     {
                         eventManager.flashColor(Color.green, 0.25f);
                     }
+                    hitAudio.Play();
                     enemy.killMe();
                 }
             }
