@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyEvents : MonoBehaviour
 {
@@ -23,12 +24,17 @@ public class EnemyEvents : MonoBehaviour
     private BoxCollider2D m_BoxCollider2D;
 
     //TRASH CODE CUS SPAGHETTI
-    float count = 3;
+    float count = 1;
+
+
+
+    public UnityEvent ded;
     // Start is called before the first frame update
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         m_BoxCollider2D = GetComponent<BoxCollider2D>();
+        
     }
     void Start()
     {
@@ -66,27 +72,31 @@ public class EnemyEvents : MonoBehaviour
             }
         }
 
-        else if (isDead)
-        {
+        //else if (isDead)
+        //{
             
-            count -= Time.deltaTime;
 
-            if(count <= 0)
-            {
-                Destroy(gameObject);
-            }
+            //count -= Time.deltaTime;
 
-        }
+            //if(count <= 0)
+            //{
+                
+                //Destroy(gameObject);
+            //}
+
+       // }
     }
     // kill enemy
     public void killMe()
     {
+        
         //stop ability to move
         movementStatus = false;
 
         //have enemy pop up, and then fall down for death.
-        m_Rigidbody2D.AddForce(new Vector2(0f, 100f));
+        //m_Rigidbody2D.AddForce(new Vector2(0f, 100f));
         //oh no, enemy fell over
+        
         //gameObject.transform.localScale = new Vector3(1f, 0.5f, 1f);
         //gameObject.GetComponent<CapsuleCollider2D>().offset = new Vector2(0, .5f);
         if (isDead == false) { 
@@ -105,6 +115,14 @@ public class EnemyEvents : MonoBehaviour
 
         //he dead as hell
         isDead = true;
+        ded.Invoke();
+        Destroy(gameObject, 1);
+        
+     
+        
+        
+
+
     }
     private void Flip()
     {
