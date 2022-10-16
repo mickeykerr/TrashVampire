@@ -116,7 +116,11 @@ public class EnemyEvents : MonoBehaviour
         //he dead as hell
         isDead = true;
         ded.Invoke();
-        Destroy(gameObject, 1);
+        //hide enemy
+        SpriteRenderer sprite = this.gameObject.GetComponent<SpriteRenderer>();
+        sprite.enabled = false;
+        //destroy gameObject
+        Destroy(this.gameObject, 1f);
         
      
         
