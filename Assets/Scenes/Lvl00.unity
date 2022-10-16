@@ -715,7 +715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2051749038589247239, guid: 94e09319d5d8af74fa745ff322e66a07, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2051749038589247239, guid: 94e09319d5d8af74fa745ff322e66a07, type: 3}
       propertyPath: m_TagString
@@ -33578,11 +33578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542d2864649b8ef46bf8824568978bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPoint: {fileID: 0}
-  attackRange: 0.5
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 128
   health: {fileID: 1163613269}
   hitAudio: {fileID: 1163613266}
   missAudio: {fileID: 1163613266}
