@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 0.82507753
       objectReference: {fileID: 0}
+    - target: {fileID: 3613635121673966992, guid: 376d79422080ddd448374c56eb39c164, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 5dcc088de79e70449a8033dc1b49f443, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 376d79422080ddd448374c56eb39c164, type: 3}
 --- !u!4 &3350549296020757293 stripped
