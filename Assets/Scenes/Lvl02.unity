@@ -3572,6 +3572,7 @@ Transform:
   - {fileID: 1284017115}
   - {fileID: 1421055359}
   - {fileID: 661512348}
+  - {fileID: 1135185920}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3814,6 +3815,68 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1135185919
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1118897093}
+    m_Modifications:
+    - target: {fileID: 5860982771490101201, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860982771490101201, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860982771490101201, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860982771490101201, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0627758
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860982771490101201, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860982771490101201, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860982771490101201, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860982771490101201, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860982771490101201, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860982771490101201, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860982771490101201, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860982771490101205, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+      propertyPath: m_Name
+      value: Enemy Toothless (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+--- !u!4 &1135185920 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5860982771490101201, guid: 3818dd41c3ad80a46a4a4e256ec5035a, type: 3}
+  m_PrefabInstance: {fileID: 1135185919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1218734658
 PrefabInstance:
   m_ObjectHideFlags: 0
