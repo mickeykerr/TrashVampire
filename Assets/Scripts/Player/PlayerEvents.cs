@@ -106,11 +106,11 @@ public class PlayerEvents : MonoBehaviour
             ouchAudio.Play();
         }
         
-        if (collision.gameObject.CompareTag("KillZone"))
-        {
-            player.hp = 0;
-            ouchAudio.Play();
-        }
+//        if (collision.gameObject.CompareTag("KillZone"))
+//        {
+//            player.hp = 0;
+//            ouchAudio.Play();
+//ss        }
 
         if (collision.gameObject.CompareTag("Win") && !player.isDead)
         {
