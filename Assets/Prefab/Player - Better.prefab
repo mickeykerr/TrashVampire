@@ -10059,10 +10059,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7008626761862512146, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
-      propertyPath: AttackCollider
-      value: 
-      objectReference: {fileID: 2051749038589247239}
-    - target: {fileID: 7008626761862512146, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}
       propertyPath: healingFlashSpeed
       value: 6.5
       objectReference: {fileID: 0}
@@ -10985,6 +10981,7 @@ MonoBehaviour:
   hitAudio: {fileID: 2979636955421893467}
   missAudio: {fileID: 3422518098388440006}
   attackAnimationHandler: {fileID: 5052421393293377656}
+  AttackHitbox: {fileID: 0}
 --- !u!82 &2979636955421893467 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6080754564430713387, guid: 93f236c7b2e94944baea8ef95d33f7d3, type: 3}

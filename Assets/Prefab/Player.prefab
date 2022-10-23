@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invincibilityTimerMax: 1
+  BossDamage: 15
   invincible: 0
   EnemDMG: 5
   player: {fileID: 7008626761862512146}
@@ -298,7 +299,9 @@ MonoBehaviour:
   maxhp: 10
   hp: 0
   healingFlashSpeed: 5
+  HealthReductionSpeed: 2
   healthBar: {fileID: 0}
+  EnableHealthDecay: 1
   movementStatus: 1
   isDead: 0
   AttackCollider: {fileID: 7008626762698083959}
@@ -322,6 +325,7 @@ MonoBehaviour:
   hitAudio: {fileID: 0}
   missAudio: {fileID: 0}
   attackAnimationHandler: {fileID: 4262424449298477320}
+  AttackHitbox: {fileID: 0}
 --- !u!61 &8986385794681226556
 BoxCollider2D:
   m_ObjectHideFlags: 0

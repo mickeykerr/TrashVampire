@@ -117,17 +117,13 @@ public class EnemyEvents : MonoBehaviour
         isDead = true;
         ded.Invoke();
         //hide enemy
-        SpriteRenderer sprite = this.gameObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         sprite.enabled = false;
+
         //destroy gameObject
         Destroy(this.gameObject, 1f);
-        
-     
-        
-        
-
-
     }
+
     private void Flip()
     {
         // Switch the way the player is labelled as facing.

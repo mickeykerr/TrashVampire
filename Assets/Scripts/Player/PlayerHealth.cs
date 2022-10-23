@@ -10,8 +10,9 @@ public class PlayerHealth : MonoBehaviour
     public float maxhp = 10;
     public float hp;
     public float healingFlashSpeed = 5;
+    public float HealthReductionSpeed = 2;
     public HealthBar healthBar;
-    private bool inHealthArea = false;
+    public bool EnableHealthDecay = true;
     //death declations
     public bool movementStatus = true;
     public bool isDead = false;
@@ -21,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
 
     public UnityEvent onDeath;
 
+    private bool inHealthArea = false;
     private float t = 0f;
     private bool returnHealing = false;
     void iAmDed()
@@ -70,9 +72,9 @@ public class PlayerHealth : MonoBehaviour
         {
             iAmDed();
         }
-        if (hp > -1 && !inHealthArea)
+        if (hp > -1 && !inHealthArea && EnableHealthDecay)
         {
-            hp -= Time.deltaTime * 2;
+            hp -= Time.deltaTime * HealthReductionSpeed;
         }
 
         if (hp > -1 && inHealthArea && hp < 10)
