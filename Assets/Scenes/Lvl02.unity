@@ -1556,9 +1556,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You Win!
+  m_text: 'Success!
 
-    Returning to Menu...'
+    Loading Next Level!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb40e40944df4b247995acb44c4ae09e, type: 2}
   m_sharedMaterial: {fileID: 6184243678447999837, guid: bb40e40944df4b247995acb44c4ae09e, type: 2}
